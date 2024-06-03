@@ -11,7 +11,7 @@ class Solution(object):
 
         while(idx < len(nums)):
             while(idx2 < len(nums)):
-                if((nums[idx] + nums[idx2]) == target):
+                if(((nums[idx] + nums[idx2]) == target) and (idx != idx2)):
                     result = [idx,idx2]
                     return (result)
                 else: idx2 += 1
