@@ -5,15 +5,25 @@ class Solution(object):
         :type word2: str
         :rtype: str
         """
-        long = max(word1, word2)
-        short = min(word1, word2)
+        short = min(len(word1), len(word2))
+        long = max(len(word1), len(word2))
         result = ""
         i = 0
 
-        for char in short:
+
+        while(i < short):
             result += word1[i]
             result += word2[i]
             i += 1
+        if(short == len(word1)):
+            while(i < long):
+                result += word2[i]
+                i += 1
+        else:
+            while(i < long):
+                result += word1[i]
+                i += 1
+        return result
 
 if __name__ == "__main__":
     answer = Solution()
